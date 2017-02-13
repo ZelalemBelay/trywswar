@@ -3,7 +3,6 @@ package com.ftc.cont;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +13,6 @@ import java.util.List;
 @Controller
 public class cont
 {
-    @RequestMapping("/getdata")
-    public String gett()
-    {
-        return "This is a test Data from Rest Method.";
-    }
-
 
     @RequestMapping(value = "/getperson", produces = "application/json")
     public @ResponseBody Person getp()
@@ -35,7 +28,7 @@ public class cont
                 "Melbourne", "Florida"));
     }
 
-    @RequestMapping("/geta")
+    @RequestMapping("/getab")
     public @ResponseBody Address geta()
     {
         return new Address(4564,"","","");
@@ -45,13 +38,12 @@ public class cont
     public @ResponseBody List<Person> getp2()
     {
         List<Person> ps = new ArrayList<>();
-        ps.add(new Person(4, "Zelalem", new Address(32904, "2265 Crippen",
+        ps.add(new Person(4, "Thomas", new Address(32904, "2265 Crippen",
             "Melbourne", "Florida")));
-        ps.add(new Person(88, "Eyuel", new Address(32904, "2265 Crippen",
+        ps.add(new Person(88, "Grumm", new Address(32904, "2265 Crippen",
             "Melbourne", "Florida")));
 
         return ps;
     }
-
 
 }
